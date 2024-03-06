@@ -1,8 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
+import schedule
+import time
 
-product_list = ['B07STGHZK8', 'B07J2WBKXF', 'B01N0Z1YKE']
+product_list = ['B07STGHZK8'] #example product
 base_url = 'https://www.amazon.it/'
 url = 'https://www.amazon.it/dp/'
 headers = {
@@ -16,17 +18,26 @@ cookies = base_response.cookies
 
 
 def scrape_amazon_product():
-    print(datetime.now())
+    try:
+        print(datetime.now())
 
-    for prod in product_list:
-        product_response = requests.get(url + prod, headers=headers, cookies=cookies)
-        soup = BeautifulSoup(product_response.text, 'html.parser')
+        for prod in product_list:
+            product_response = requests.get(url + prod, headers=headers, cookies=cookies)
+            soup = BeautifulSoup(product_response.text, 'html.parser')
 
-        product_name = soup.find(id="productTitle").text.strip()
-        product_price = soup.find('span', {'class': 'a-offscreen'}).text.strip()
+            product_name = soup.find('span' , id="productTitle").text.strip()
+            product_price = soup.find('span', {'class': 'a-offscreen'}).text.strip()
 
-        price_float = float(product_price.replace('€', '').replace(',', '.'))
+            price_float = float(product_price.replace('€', '').replace(',', '.'))
+
+            print(f"Name: {product_name}")
+            print(f"ID: {prod}" + f" - Price: {product_price}")
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 
-        print(f"Name: {product_name}")
-        print(f"ID: {prod}" + f" - Price: {product_price}")
+schedule.every(5).seconds.do(scrape_amazon_product)
+while True:
+    schedule.run_pending()
+    time.sleep(1)
