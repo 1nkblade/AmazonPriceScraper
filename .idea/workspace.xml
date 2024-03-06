@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="772b9423-95bf-48ec-a834-4e784af56d12" name="Changes" comment="scraper">
+    <list default="true" id="772b9423-95bf-48ec-a834-4e784af56d12" name="Changes" comment="readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/amazon_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/amazon_scraper.py" afterDir="false" />
     </list>
@@ -194,7 +194,23 @@
       <option name="project" value="LOCAL" />
       <updated>1709708561639</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added schedule">
+      <option name="closed" value="true" />
+      <created>1709760158223</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1709760158223</updated>
+    </task>
+    <task id="LOCAL-00006" summary="readme">
+      <option name="closed" value="true" />
+      <created>1709760206464</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1709760206464</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -212,6 +228,8 @@
     <MESSAGE value="basic price and name scraper given a list of IDs" />
     <MESSAGE value="readme change" />
     <MESSAGE value="scraper" />
-    <option name="LAST_COMMIT_MESSAGE" value="scraper" />
+    <MESSAGE value="added schedule" />
+    <MESSAGE value="readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme" />
   </component>
 </project>
